@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página da Matemática</title>
+
+    <link rel="stylesheet" href="./css/estilosPaginaMatematica.css">
+</head>
+<body>
+    <nav id = "operacoes">
+        <a href="#soma">Soma</a>
+        <a href="#subtracao">Subtração</a>
+        <a href="#multiplicacao">Multiplicação</a>
+        <a href="#divisao">Divisão</a>
+        <a href="#potencia">Potenciação</a>
+    </nav>
+
+    <section id = "soma"> 
+        <h1>SOMA DE DOIS NÚMEROS</h1>
+        <div>
+            <label for="n1">
+                Digite um valor
+            </label>
+            <input type="number" name="n1" id="n1">
+        </div>
+
+        <div>
+            <label for="n2">
+                Digite um valor
+            </label>
+            <input type="number" name="n2" id="n2">
+        </div>
+        
+        <input type="button" value="Calcular!" onclick="somar()">
+        <div id = "resultSoma">
+            Sua resposta aparecerá aqui
+        </div>
+    </section>
+
+    <section id = "subtracao"> 
+        <h1>SUBTRAÇÃO DE DOIS NÚMEROS</h1>
+        <div>
+            <label for="s1">
+                Digite um valor
+            </label>
+            <input type="number" name="s1" id="s1">
+        </div>
+
+        <div>
+            <label for="s2">
+                Digite um valor
+            </label>
+            <input type="number" name="s2" id="s2">
+        </div>
+        
+        <input type="button" value="Calcular!" onclick="subtrair()">
+        <div id = "resultSub">
+            Sua resposta aparecerá aqui
+        </div>
+    </section>
+
+    <section id = "multiplicacao"> 
+        <h1>MULTIPLICAÇÃO DE DOIS NÚMEROS</h1>
+        <div>
+            <label for="p1">
+                Digite um valor
+            </label>
+            <input type="number" name="p1" id="p1">
+        </div>
+
+        <div>
+            <label for="p2">
+                Digite um valor
+            </label>
+            <input type="number" name="p2" id="p2">
+        </div>
+        
+        <input type="button" value="Calcular!" onclick="produto()">
+        <div id = "resultMult">
+            Sua resposta aparecerá aqui
+        </div>
+    </section>
+
+    <section id = "divisao"> 
+        <h1>DIVISÃO DE DOIS NÚMEROS</h1>
+        <div>
+            <label for="d1">
+                Digite um valor
+            </label>
+            <input type="number" name="d1" id="d1">
+        </div>
+
+        <div>
+            <label for="d2">
+                Digite um valor
+            </label>
+            <input type="number" name="d2" id="d2">
+        </div>
+        
+        <input type="button" value="Calcular!" onclick="dividir()">
+        <div id = "resultDiv">
+            Sua resposta aparecerá aqui
+        </div>
+    </section>
+
+    <section id = "potencia"> 
+        <h1>POTÊNCIA DE UM NÚMERO</h1>
+        <div>
+            <label for="e1">
+                Digite um valor
+            </label>
+            <input type="number" name="e1" id="e1">
+        </div>
+
+        <div>
+            <label for="e2">
+                elevado à potência
+            </label>
+            <input type="number" name="e2" id="e2">
+        </div>
+        
+        <input type="button" value="Calcular!" onclick="potencia()">
+        <div id = "resultPot">
+            Sua resposta aparecerá aqui
+        </div>
+    </section>
+    <footer>
+        <p>
+            &copy; Copywright Liz Vidotti
+        </p>
+        <p>
+            Esta página foi desenvolvida a partir do
+        </p>
+        <a href="https://www.youtube.com/playlist?list=PLHz_AreHm4dlsK3Nr9GVvXCbpQyHQl1o1" target="blank">CURSO GRÁTIS DE JAVASCRIPT E ECMASCRIPT PARA INICIANTES</a>
+        <p>
+            do professor Gustavo Guanabara.
+        </p>
+    </footer>
+
+    <script>
+        function somar(){
+            var n1 = Number(window.document.getElementById('n1').value);
+            var n2 = Number(window.document.getElementById('n2').value);
+
+            var soma = n1 + n2;
+
+            var resultSoma = window.document.getElementById('resultSoma');
+            resultSoma.innerHTML = `${n1} + ${n2} = ${soma}`;
+        } 
+
+        function subtrair(){
+            var s1 = Number(window.document.getElementById('s1').value);
+            var s2 = Number(window.document.getElementById('s2').value);
+
+            var subtracao = s1 - s2;
+
+            var resultSub = window.document.getElementById('resultSub');
+            resultSub.innerHTML = `${s1} - ${s2} = ${subtracao}`;
+        }  
+
+        function produto(){
+            var p1 = Number(window.document.getElementById('p1').value);
+            var p2 = Number(window.document.getElementById('p2').value);
+
+            var produto = p1 * p2;
+
+            var resultSub = window.document.getElementById('resultMult');
+            resultMult.innerHTML = `${p1} X ${p2} = ${produto}`;
+        }  
+
+        function dividir(){
+            var d1 = Number(window.document.getElementById('d1').value);
+            var d2 = Number(window.document.getElementById('d2').value);
+
+            var divisao = d1 / d2;
+
+            var resultDiv = window.document.getElementById('resultDiv');
+            resultDiv.innerHTML = `${d1} / ${d2} = ${divisao.toFixed(2).replace('.',',')}`;
+        }  
+
+        function potencia(){
+            var e1 = Number(window.document.getElementById('e1').value);
+            var e2 = Number(window.document.getElementById('e2').value);
+
+            var potencia = e1 ** e2;
+
+            var resultDiv = window.document.getElementById('resultPot');
+            resultDiv.innerHTML = `${e1} elevado à potência ${e2} é igual a ${potencia}`;
+        }   
+    </script>
+</body>
+</html>
